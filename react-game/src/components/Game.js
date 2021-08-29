@@ -6,7 +6,6 @@ const verticalAxis = ["1", "2", "3", "4", "5", "6", "7", "8"];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
 const boardLength = verticalAxis.length * horizontalAxis.length;
 
-const randomSpot = Math.floor(Math.random() * boardLength);
 
 function Game() {
 
@@ -16,15 +15,15 @@ function Game() {
         for (let i = 0; i < horizontalAxis.length; i++) {
             const randomSpot = Math.floor(Math.random() * boardLength);
 
-            if (boardLength === randomSpot){
+            if (randomSpot) {
                 board.push(
-                    <Sheep />
+                    <div className="tile">
+                        {horizontalAxis[i]} {verticalAxis[j]}
+                    </div>
                     );
             } else {
                 board.push(
-                    <div className="tile tile-color">
-                        {horizontalAxis[i]} {verticalAxis[j]}
-                    </div>
+                        <Sheep/>
                     );
             }
         }
@@ -33,7 +32,6 @@ function Game() {
     return (
         <div id='gameBoard'>
             {board}
-            <h1>{randomSpot}</h1>
         </div> 
         
     )
