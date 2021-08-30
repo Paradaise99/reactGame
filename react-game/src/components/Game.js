@@ -10,6 +10,7 @@ const boardLength = verticalAxis.length * horizontalAxis.length;
 function Game() {
 
     let board = [];
+    
 
     for (let j = verticalAxis.length - 1; j >= 0; j--) {
         for (let i = 0; i < horizontalAxis.length; i++) {
